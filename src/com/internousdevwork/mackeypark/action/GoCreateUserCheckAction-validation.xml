@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+      <!--  -->
+
+      <validators>
+    	<!-- お名前 -->
+    	<field name="userName">
+    	    <field-validator type="requiredstring">
+    			<message key="go_create_user_check_action-validation.Inp"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[ぁ-んァ-ヶ一-龠一-十]+$</param>
+    			<message key="go_create_user_check_action-validation.1"/>
+    		</field-validator>
+    		<field-validator type="stringlength">
+                	<param name="minLength">1</param>
+                	<param name="maxLength">50</param>
+                <message key="go_create_user_check_action-validation.2"/>
+    		</field-validator>
+    	</field>
+
+
+    	<!-- フリガナ -->
+    	<field name="nameKana">
+    		<field-validator type="requiredstring">
+    			<message key="go_create_user_check_action-validation.Inp"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[ア-ン]{1,50}$</param>
+    			<message key="go_create_user_check_action-validation.3"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- パスワード -->
+    	<field name="password">
+    		<field-validator type="requiredstring">
+    			<message key="go_create_user_check_action-validation.Inp"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="go_create_user_check_action-validation.4"/>
+    		</field-validator>
+    	</field>
+
+       <!-- パスワード(確認用) -->
+    	<field name="reTypePassword">
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[reTypePassword.equals(password)]]></param>
+    			<message key="go_create_user_check_action-validation.pas"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="go_create_user_check_action-validation.5"/>
+    		</field-validator>
+    	</field>
+
+  	 	<!-- 新しいメールアドレス -->
+    	<field name="email">
+    		 <field-validator type="requiredstring">
+    			<message key="go_create_user_check_action-validation.Inp"/>
+    		</field-validator>
+    		<field-validator type="email">
+    			<message key="go_create_user_check_action-validation.6"/>
+    		</field-validator>
+			<field-validator type="regex">
+    			<param name="regex">.{1,100}</param>
+    			<message key="go_create_user_check_action-validation.char"/>
+    		</field-validator>
+    	</field>
+    	 <!-- 新しいメールアドレス（確認用） -->
+    	<field name="reTypeEmail">
+    		<field-validator type="email">
+    			<message key="go_create_user_check_action-validation.6"/>
+    		</field-validator>
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[reTypeEmail != null && reTypeEmail.equals(email)]]></param>
+    			<message key="go_create_user_check_action-validation.new"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">.{1,100}</param>
+    			<message key="go_create_user_check_action-validation.char"/>
+    		</field-validator>
+    	</field>
+
+  		<!-- クレジットカード番号 -->
+    	<field name="cardNumber">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{16}$</param>
+    			<message key="go_create_user_check_action-validation.word"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- クレジットカード名義 -->
+    	<field name="cardHolder">
+    		<field-validator type="regex">
+    			<param name="regex">^[A-Z]* [A-Z]*$</param>
+    			<message key="go_create_user_check_action-validation.7"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- セキュリティコード -->
+    	<field name="securityCode">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{3,4}$</param>
+    			<message key="go_create_user_check_action-validation.8"/>
+    		</field-validator>
+    	</field>
+      </validators>

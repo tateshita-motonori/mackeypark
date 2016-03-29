@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+table {
+	border-collapse: collapse;
+}
+
+
+td {
+	border: solid 1px;
+	padding: 0.5em;
+}
+
+#form{
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 1px 10px #488a9e;
+  -moz-box-shadow: 0px 1px 10px #488a9e;
+  box-shadow: 0px 1px 10px #488a9e;
+  border: solid #4eb4c2 1px;
+  background: #fafafa;
+  width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #555;
+  }
+
+body,form{
+  margin: 0
+  }
+
+.form-title{
+  text-align: center;
+  font-family: Arial;
+  font-size: 30px;
+  color: #4eb4c2;
+  }

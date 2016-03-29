@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+
+table, th, td {
+    border:none;
+    width:auto;
+	padding:10px;
+
+}
+
+td{
+	text-align: baseline;
+
+}
+
+th, td {
+    border-bottom:solid 1px silver;
+}
+
+th:first-child {
+    border-right:solid 1px silver;
+}
+
+
+table.riigai{
+	width:500px;
+}
+table.allTiketto{
+	text-align: right;
+	width:500px;
+}
+table.gennka{
+	width:500px;
+}
+
+th,allTiketto{
+	width:80px;
+}
+
+table.allAll {
+	text-align: right;
+	font-size: 20px;
+	width:500px;
+}

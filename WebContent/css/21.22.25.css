@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+#site-box {    }
+
+
+#a-box {  float: left;}
+
+#b-box {
+  float: right;
+  margin-bottom: 100px;
+}
+
+#c-box {
+  clear:both;
+  }
+
+table {
+	border-collapse: collapse;
+  width: 100%;
+}
+
+td{
+  text-align: right;
+}
+
+th{
+  text-align: center;
+}
+.List{
+	text-align: center;
+}
+.border{
+	border: solid 1px;
+}

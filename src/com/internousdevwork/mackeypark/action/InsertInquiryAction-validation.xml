@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+      <!--  -->
+
+      <validators>
+
+  	 	<!-- 新しいメールアドレス -->
+    	<field name="formAddress">
+    		<field-validator type="email">
+    			<message key="go_create_user_check_action-validation.6"/>
+    		</field-validator>
+		</field>
+    	</validators>

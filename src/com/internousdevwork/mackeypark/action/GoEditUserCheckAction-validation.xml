@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+      <!--  -->
+
+      <validators>
+    	<!-- パスワード -->
+    	<field name="password">
+    		<field-validator type="requiredstring">
+    			<message key="go_edit_user_check_action_validation.input"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="go_edit_user_check_action_validation.charactars1"/>
+    		</field-validator>
+    	</field>
+
+       <!-- パスワード(確認用) -->
+    	<field name="reTypePassword">
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[reTypePassword.equals(password)]]></param>
+    			<message key="go_edit_user_check_action_validation.password"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="go_edit_user_check_action_validation.charactars1"/>
+    		</field-validator>
+    	</field>
+
+  	 	<!-- 新しいメールアドレス  -->
+    	<field name="email">
+    		 <field-validator type="requiredstring">
+    			<message key="go_edit_user_check_action_validation.input"/>
+    		</field-validator>
+    		<field-validator type="email">
+    			<message key="go_edit_user_check_action_validation.format"/>
+    		</field-validator>
+			<field-validator type="regex">
+    			<param name="regex">.{1,100}</param>
+    			<message key="go_edit_user_check_action_validation.shar"/>
+    		</field-validator>
+    	</field>
+    	 <!-- 新しいメールアドレス（確認用） -->
+    	<field name="reTypeEmail">
+    		<field-validator type="email">
+    			<message key="go_edit_user_check_action_validation.format"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">.{1,100}</param>
+    			<message key="go_edit_user_check_action_validation.shar"/>
+    		</field-validator>
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[reTypeEmail != null && reTypeEmail.equals(email)]]></param>
+    			<message key="go_edit_user_check_action_validation.mail"/>
+    		</field-validator>
+    	</field>
+
+		<!-- クレジットカード番号 -->
+    	<field name="cardNumber">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{16}$</param>
+    			<message key="go_edit_user_check_action_validation.characters3"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- クレジットカード名義 -->
+    	<field name="cardHolder">
+    		<field-validator type="regex">
+    			<param name="regex">^[A-Z]* [A-Z]*$</param>
+    			<message key="go_edit_user_check_action_validation.characters4"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- セキュリティコード -->
+    	<field name="securityCode">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{3,4}$</param>
+    			<message key="go_edit_user_check_action_validation.characters5"/>
+    		</field-validator>
+    	</field>
+ </validators>
